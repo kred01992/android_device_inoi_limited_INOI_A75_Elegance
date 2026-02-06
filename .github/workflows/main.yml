@@ -1,0 +1,25 @@
+cat <<EOF > .github/workflows/main.yml
+name: Build TWRP
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build TWRP
+        uses: TeliXz/Action-Recovery-Builder@main
+        with:
+          gh_token: \${{ github.token }}
+          device_tree: https://github.com
+          device_path: device/inoi_limited/INOI_A75_Elegance
+          device_name: INOI_A75_Elegance
+          manifest_url: https://github.com
+          manifest_branch: twrp-14
+          target: vendorbootimage
+EOF

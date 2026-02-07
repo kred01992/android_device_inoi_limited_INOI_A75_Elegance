@@ -1,4 +1,4 @@
-name: Build TWRP
+name: Build TWRP 12.1
 on:
   workflow_dispatch:
   push:
@@ -12,12 +12,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build TWRP
-        uses: TeliXz/Action-Recovery-Builder@main
+        uses: kinguser981/TWRP-Recovery-Builder-2024@main
         with:
           gh_token: ${{ github.token }}
-          device_tree: https://github.com
+          device_tree_url: https://github.com
+          device_tree_branch: main
           device_path: device/inoi_limited/INOI_A75_Elegance
           device_name: INOI_A75_Elegance
+          device_makefile: twrp_INOI_A75_Elegance
           manifest_url: https://github.com
-          manifest_branch: twrp-14
-          target: vendorbootimage
+          manifest_branch: twrp-12.1
+          build_target: vendor_boot

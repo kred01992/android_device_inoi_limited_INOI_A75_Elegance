@@ -55,8 +55,7 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
-
+# BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img  # add dtbo.img to prebuilt/ if needed
 
 # Kernel - prebuilt
 TARGET_FORCE_PREBUILT_KERNEL := true
@@ -120,5 +119,3 @@ TARGET_RECOVERY_FSTAB := device/inoi_limited/INOI_A75_Elegance/recovery.fstab
 BOARD_EROFS_COMPRESSOR := lz4
 
 BOARD_MAIN_FASTBOOT_PARTITION_LIST := system vendor product system_ext
-BOARD_SUPER_PARTITION_GROUPS := inoi_dynamic_partitions
-BOARD_INOI_DYNAMIC_PARTITIONS_PARTITION_LIST := system vendor product system_ext

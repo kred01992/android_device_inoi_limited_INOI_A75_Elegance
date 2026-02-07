@@ -19,7 +19,7 @@ jobs:
           device_tree_branch: main
           device_path: device/inoi_limited/INOI_A75_Elegance
           device_name: INOI_A75_Elegance
-          device_makefile: twrp_INOI_A75_Elegance
+          device_makefile: omni_INOI_A75_Elegance
           manifest_url: https://github.com
           manifest_branch: twrp-12.1
           build_target: vendor_boot
